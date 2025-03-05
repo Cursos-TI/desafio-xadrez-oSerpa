@@ -1,57 +1,80 @@
-// Desafio Aventureiro
+// Desafio Mestre
 
 #include <stdio.h>
 
-int main(){
+// Mover torre
 
-    //torre
-
-    printf("\nTorre -\n");
-
-    for (int i = 0; i < 5; i++) {
-        printf("Cima\n");
+void moverTorre(int casa){
+    if (casa > 0) {
+        printf("Direita\n");
+        moverTorre(casa - 1);
     }
-    
-    // bispo
+}
 
-    printf("\nBispo -\n");
+// Mover rainha
 
+void moverRainha(int casa){
+    if (casa > 0) {
+        printf("Esquerda\n");
+        moverRainha(casa - 1);
+    }
+}
+
+// Mover bispo
+
+void moverBispo(int casa){
+    int Bispo;
     int j = 0;
 
-    do {
-        printf("Cima, Direita\n");
-        j++;
-    } while (j < 5);
-    
-    // rainha
-
-    printf("\nRainha -\n");
-
-    int k = 0;
-
-    while (k < 8) {
-        printf("Esquerda\n");
-        k++;
-    }
-
-    // cavalo
-
-    int l = 0;
-
-    printf("\nCavalo -\n");
-    
-    for (l; l < 1; l++) { // movimento pra direita
-
-        int m = 0;
-
-        while (m < 2) { // movimento pra cima
-            printf("Cima\n");
-            m++;
-        }
+    for (int i = 0; i < 5; i++) {
+        
+        do {
+           printf("Cima\n"); 
+           j++;
+        } while (j < i);
         
         printf("Direita\n");
     }
     
+    
+}
+
+// Mover cavalo
+
+void moverCavalo(int casa){
+    for (int i = 0; i < 1; i++) {
+        int j = 0;
+        while (j < 2) {
+            printf("Cima\n");
+            j++;
+        }
+        printf("Direita\n");
+    }
+    
+}
+
+int main(){
+
+    int movTorre = 5;
+    int movRainha = 8;
+    int movBispo = 5;
+    int movCavalo = 1;
+
+    printf("\nTorre -\n");
+
+    moverTorre(movTorre);
+
+    printf("\nRainha -\n");
+
+    moverRainha(movRainha);
+
+    printf("\nBispo -\n");
+
+    moverBispo(movBispo);
+
+    printf("\nCavalo -\n");
+
+    moverCavalo(movCavalo);
 
     return 0;
 }
