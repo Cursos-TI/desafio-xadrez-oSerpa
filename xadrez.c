@@ -1,4 +1,4 @@
-// Desafio Novato
+// Desafio Aventureiro
 
 #include <stdio.h>
 
@@ -9,7 +9,7 @@ int main(){
     printf("\nTorre -\n");
 
     for (int i = 0; i < 5; i++) {
-        printf("Direita\n");
+        printf("Cima\n");
     }
     
     // bispo
@@ -32,6 +32,24 @@ int main(){
     while (k < 8) {
         printf("Esquerda\n");
         k++;
+    }
+
+    // cavalo
+
+    int l = 0;
+
+    printf("\nCavalo -\n");
+    
+    for (l; l < 1; l++) { // movimento pra direita
+
+        int m = 0;
+
+        while (m < 2) { // movimento pra cima
+            printf("Cima\n");
+            m++;
+        }
+        
+        printf("Direita\n");
     }
     
 
